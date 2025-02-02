@@ -5,6 +5,13 @@ import json
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return jsonify({"message": "Il backend è online e funziona!"})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
 # Configurazione cartelle per caricamento file
 UPLOAD_FOLDER = './uploads'
 EXPORT_FOLDER = './exports'
